@@ -7,6 +7,19 @@ include(joinpath(@__DIR__, "..", "equations", "compressible_euler_vectorinvarian
 include(joinpath(@__DIR__, "..", "solver", "noncons_kernel_2d.jl"))
 include(joinpath(@__DIR__, "inertia_gravity_analytical_solution.jl"))
 
+Base.@kwdef struct ProblemSetup{NameT,EquationsT,InitialConditionT,BoundaryConditionT,TspanT,CoordinateT,SourceT,PeriodicityT,TimeMethodT}
+    problem_name::NameT
+    equations::EquationsT
+    initial_condition::InitialConditionT
+    boundary_conditions::BoundaryConditionT
+    tspan::TspanT
+    coordinates_min::CoordinateT
+    coordinates_max::CoordinateT
+    source_terms::SourceT
+    periodicity::PeriodicityT
+    time_method::TimeMethodT
+end
+
 function initial_condition_gravity_wave(
     x,
     t,
