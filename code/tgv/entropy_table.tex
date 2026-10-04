@@ -1,0 +1,21 @@
+\begin{table}[h!]
+    \centering
+    \caption{Maximum entropy error $| \int U_{\varrho s} - \int U_{\varrho s,0}|$ and
+    entropy residual $\vec{\omega}_{\varrho s}^T \vec{M} \partial_t \vec{u}$, and total-energy
+    error $|\int U_{\varrho E} - \int U_{\varrho E,0}|$ and total-energy residual
+    $\vec{\omega}_{\varrho E}^T \vec{M} \partial_t \vec{u}$, for the Taylor-Green vortex for
+    different polynomial degrees $p$ up to the final time $T = 5$.}
+    \label{tab:tgv_conservation}
+    \begin{tabular}{ccccc}
+        \toprule
+        & \multicolumn{2}{c}{Thermodynamic entropy} & \multicolumn{2}{c}{Total energy} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+        $p$ & $|\int U_{\varrho s} - \int U_{\varrho s,0}|$ & $\vec{\omega}_{\varrho s}^T \vec{M} \partial_t \vec{u}$ & $|\int U_{\varrho E} - \int U_{\varrho E,0}|$ & $\vec{\omega}_{\varrho E}^T \vec{M} \partial_t \vec{u}$ \\
+        \midrule
+        2 & \num{1.91e-11} & \num{6.94e-18} & \num{5.55e-10} & \num{3.73e-15} \\
+        3 & \num{2.57e-11} & \num{2.79e-17} & \num{5.24e-10} & \num{1.05e-15} \\
+        4 & \num{3.23e-11} & \num{1.03e-17} & \num{6.53e-10} & \num{6.37e-16} \\
+        5 & \num{3.86e-11} & \num{7.56e-18} & \num{7.86e-10} & \num{1.29e-15} \\
+        \bottomrule
+    \end{tabular}
+\end{table}

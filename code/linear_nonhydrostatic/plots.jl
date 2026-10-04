@@ -1,0 +1,72 @@
+using CairoMakie
+using DataFrames
+using CSV
+
+function retrieve_data_momentum(name, cells_per_dimension, polydeg, alfa, xr_B, form)
+    folder_path = joinpath(@__DIR__, "..") * "/results/"
+
+    t1 = CSV.read(
+        folder_path *
+        "$(name)_2_$(cells_per_dimension[1])x$(cells_per_dimension[2])_$(polydeg)_$(alfa)_$(xr_B)_$(form).csv",
+        DataFrame,
+    )
+    t2 = CSV.read(
+        folder_path *
+        "$(name)_4_$(cells_per_dimension[1])x$(cells_per_dimension[2])_$(polydeg)_$(alfa)_$(xr_B)_$(form).csv",
+        DataFrame,
+    )
+    t3 = CSV.read(
+        folder_path *
+        "$(name)_6_$(cells_per_dimension[1])x$(cells_per_dimension[2])_$(polydeg)_$(alfa)_$(xr_B)_$(form).csv",
+        DataFrame,
+    )
+    t4 = CSV.read(
+        folder_path *
+        "$(name)_8_$(cells_per_dimension[1])x$(cells_per_dimension[2])_$(polydeg)_$(alfa)_$(xr_B)_$(form).csv",
+        DataFrame,
+    )
+    z = t1[:, 1] ./ 1e3
+    return t1, t2, t3, t4, z
+end
+
+function plot_time_momentum(;
+    cells_per_dimension = (200, 50),
+    polydeg = 3,
+    alfa = 0.03,
+    name = "VectorInvariant_nonhydrostatic",
+    form = "false",
+    xr_B = 40000,
+)
+
+    t1, t2, t3, t4, z =
+        retrieve_data_momentum(name, cells_per_dimension, polydeg, alfa, xr_B, form)
+
+    fig = CairoMakie.Figure(size = (700, 600))
+    kwargs = (
+        xlabel = L"\overline{m}(z)",
+        xlabelsize = 25,
+        limits = ((0.5, 1.2), (0, 12)),
+        xticklabelsize = 17.0,
+        yticklabelsize = 17.0,
+        titlesize = 20,
+    )
+
+    ax1 = Axis(fig[2, 1]; kwargs..., ylabel = L"$z$ [km]", ylabelsize = 25)
+
+    kwargs_plot = (linewidth = 2.6,)
+
+    lines!(ax1, t1[:, 2], z; label = L"$2$ h", kwargs_plot..., color = colors[1])
+    lines!(ax1, t2[:, 2], z; label = L"$4$ h", kwargs_plot..., color = colors[2])
+    lines!(ax1, t3[:, 2], z; label = L"$6$ h", kwargs_plot..., color = colors[3])
+    lines!(ax1, t4[:, 2], z; label = L"$8$ h", kwargs_plot..., color = colors[4])
+
+    leg = Legend(fig[1, 1], ax1, nothing, orientation = :horizontal, labelsize = 25.0)
+
+    save(joinpath(@__DIR__, "..") * "/results/linearnonhydrostatic_momentum.pdf", fig)
+
+    return nothing
+end
+
+colors = Makie.wong_colors()
+
+plot_time_momentum(alfa = 0.03)
