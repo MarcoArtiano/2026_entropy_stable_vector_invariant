@@ -1,7 +1,7 @@
 # Entropy-Stable and Well-Balanced Discontinuous Galerkin Methods for the Compressible Euler Equations in Vector-Invariant Form
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/DOI/TODO/zenodo.TODO.svg)](https://zenodo.org/doi/10.5281/zenodo.23144288)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23144287.svg)](https://zenodo.org/doi/10.5281/zenodo.23144287)
 
 This repository contains information and code to reproduce the results presented in the article
 
@@ -30,7 +30,7 @@ If you find these results useful, please cite the article mentioned above. If yo
             and Ranocha, Hendrik},
   year={2026},
   howpublished={\url{https://github.com/MarcoArtiano/2026_entropy_stable_vector_invariant}},
-  doi={10.5281/zenodo.23144288}
+  doi={10.5281/zenodo.23144287}
 }
 ```
 
