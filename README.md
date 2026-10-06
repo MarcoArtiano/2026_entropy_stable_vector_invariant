@@ -16,7 +16,7 @@ This repository contains information and code to reproduce the results presented
   eprint={2610.05820},
   eprinttype={arxiv},
   eprintclass={math.NA},
-  doi = {10.48550/arXiv.2610.05820}
+  doi={10.48550/arXiv.2610.05820}
 }
 ```
 
