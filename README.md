@@ -7,10 +7,10 @@ This repository contains information and code to reproduce the results presented
 
 ```bibtex
 @online{artiano2026vectorinvariant,
-  title={Entropy-Stable and Well-Balanced Discontinuous Galerkin Methods
-         for the Compressible Euler Equations in Vector-Invariant Form},
-  author={Artiano, Marco and Ricardo, Kieran and Knoth, Oswald and Spichtinger, Peter
-          and Ranocha, Hendrik},
+  title={Entropy-Stable and Well-Balanced Discontinuous {G}alerkin Methods
+         for the Compressible {E}uler Equations in Vector-Invariant Form},
+  author={Artiano, Marco and Ricardo, Kieran and Knoth, Oswald and
+          Spichtinger, Peter and Ranocha, Hendrik},
   year={2026},
   month={10},
   eprint={2610.05820},
