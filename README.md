@@ -12,10 +12,11 @@ This repository contains information and code to reproduce the results presented
   author={Artiano, Marco and Ricardo, Kieran and Knoth, Oswald and Spichtinger, Peter
           and Ranocha, Hendrik},
   year={2026},
-  month={TODO},
-  eprint={TODO},
+  month={10},
+  eprint={2610.05820},
   eprinttype={arxiv},
-  eprintclass={math.NA}
+  eprintclass={math.NA},
+  doi = {10.48550/arXiv.2610.05820}
 }
 ```
 
